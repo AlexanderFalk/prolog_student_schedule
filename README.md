@@ -12,11 +12,23 @@ To explain the relationsship:
 The above are facts and there has been assigned rules to retrieve a fields room or their schedule.  
 You can retrieve it by example entering in the Prolog (SWIPL) CLI:  
 ```
-  schedule(history, D, T).  
+  schedule(F, D, T).  
 ```
 Where the first argument is the field name, the second is the day variable, and the third is the timeframe variable. In this case we are getting the schedule for history.  
 There is also er second rule with in one more argument:  
 ```
   schedule(F,D,T,R).
 ```
-It is the same as above, but it has added roomnumber as well.
+It is the same as above, but it has added roomnumber as well.  
+Below is an example of output from trying to retrieve a fields days and timeframes:
+```
+
+?- schedule(law,D,T).
+D = monday,
+T = 830-1200 ;
+D = wednesday,
+T = 830-1200 ;
+D = friday,
+T = 1230-1600.
+
+```
